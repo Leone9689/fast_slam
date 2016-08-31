@@ -35,6 +35,8 @@ list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 find_package(Eigen REQUIRED)
 include_directories(${Eigen_INCLUDE_DIRS})
 
+include_directories(${PROJECT_SOURCE_DIR}/thirdparty/Sophus)
+
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++0x")
 #list(APPEND CMAKE_MODULE_PATH ${CMAKE_CURRENT_SOURCE_DIR}/cmake)
 #find_package(TBB REQUIRED)
@@ -96,7 +98,7 @@ set(SOURCE_FILES
 )
 
 rosbuild_add_library(fast SHARED ${SOURCE_FILES})
-#target_link_libraries(tbb boost_thread ${PROJECT_NAME})
+
 target_link_libraries(fast tbb boost_thread)  
 rosbuild_add_executable(fast_slam src/main.cpp)
 

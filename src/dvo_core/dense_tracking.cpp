@@ -21,7 +21,7 @@
 #include <dvo_core/dense_tracking.h>
 
 #include <assert.h>
-#include <sophus/se3.h>
+//#include <sophus/se3.h>
 
 #include <Eigen/Core>
 #include <Eigen/Eigenvalues>
